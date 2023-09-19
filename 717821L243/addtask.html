@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task</title>
+</head>
+<link rel="stylesheet" href="add.css">
+<body>
+<div class="back">
+<h1><b><i>Add and Remove The Task</i></b> </h1>
+</div>
+</div>
+<div id="task" class="styled-text"></div>
+<div class="button">
+<button onclick="Add()"><b>Add Tasks</b></button>
+<button onclick="Remove()"><b>Remove Tasks</b></button>
+</div>
+<script>
+let task1=[];
+let len=task1.length;
+function Add() {
+let a = prompt("How many Task do you want to add :");
+for (let i = 1; i <= a; i++) {
+let b = prompt("Task name " + i + ":");
+task1.push(b);
+let c = prompt("Task due date " + i + ":");
+task1.push(c);
+
+}
+Add1();
+}
+let b1 = document.getElementById("task");
+const ul = document.createElement("ul");
+for (let i1 = 0; i1 < task1.length; i1++) {
+const p= document.createElement("p");
+p.textContent = task1[i1];
+ul.appendChild(p);
+}
+b1.appendChild(ul);
+function Add1(){
+for (let i1 = len; i1 < task1.length; i1++) {
+const p= document.createElement("p");
+p.textContent = task1[i1];
+ul.appendChild(p);
+}
+b1.appendChild(ul);
+len=task1.length;
+}
+function Remove() {
+let a1 = prompt("How many tasks do you want to remove :");
+for (let i3 = 1; i3 <= a1; i3++) {
+task1.pop();
+task1.pop();
+}
+clearContent();
+remove1();
+}
+function clearContent() {
+const bb = document.getElementById("task");
+bb.innerHTML = "";
+}
+function remove1(){
+const ul = document.createElement("ul");
+for (let i1 = 0; i1 < task1.length; i1++) {
+const li = document.createElement("li");
+li.textContent = task1[i1];
+ul.appendChild(li);
+}
+const b1 = document.getElementById("task");
+b1.appendChild(ul);
+len=task1.length;
+}
+</script>
+</body>
+</html>

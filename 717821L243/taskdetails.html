@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Details</title>
+</head>
+<body>
+<link rel="stylesheet" href="details.css">
+<div class="back1">
+<h1><b><i> Task Details</i></b> </h1>
+</div>
+<div id="INFO" class="styled-text1"></div>
+<script>
+function task(taskname,duedate){
+return{
+task:taskname,
+date:duedate,
+}
+}
+let task1=task("WEEK 1 TASK","28/9/2023");
+let task2=task("WEEK 1 MINI PROJECT","29/9/2023");
+let task3=task("WEEK 2 TASK","30/9/2023");
+const taskInfo = document.getElementById("INFO");
+const t1 = document.createElement("p");
+t1.textContent ="Taskname:" +task1.task;
+taskInfo .appendChild(t1);
+const t2= document.createElement("p");
+t2.textContent ="Duedate:" +task1.date;
+taskInfo .appendChild(t2);
+const t11 = document.createElement("p");
+t11.textContent ="Taskname:" +task2.task;
+taskInfo .appendChild(t11);
+const t12= document.createElement("p");
+t12.textContent ="Duedate:" +task2.date;
+taskInfo .appendChild(t12);
+const t21 = document.createElement("p");
+t21.textContent ="Taskname:" +task3.task;
+taskInfo .appendChild(t21);
+const t22= document.createElement("p");
+t22.textContent ="Duedate:" +task3.date;
+taskInfo .appendChild(t22);
+
+</script>
+</body>
+</html>
